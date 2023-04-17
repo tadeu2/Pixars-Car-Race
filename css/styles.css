@@ -1,0 +1,170 @@
+/*FUENTE PREDETERMINADA*/
+
+* {
+  font-family: "Audiowide", sans-serif;
+}
+
+/*CUERPO DE LA PÁGINA*/
+body {
+  font-size: 20px;
+  background-color: #b9cec4;
+  /*background-image: url(../img/grasswallapaper.jpeg);*/
+  background-size: 100vw;
+  color: white;
+  padding: 0.5%;
+}
+
+/*TÍTULO PRINCIPAL DE LA PÁGINA*/
+h1 {
+  text-align: center;
+  text-shadow: 10px;
+  border-radius: 10px;
+  border: 2px dotted white;
+}
+
+/*CARRETERA*/
+.road {
+  background-image: url(../img/road.png);
+  background-size: 200px;
+  height: 100px;
+  width: 98vw;
+}
+
+/*COCHES*/
+.car {
+  position: relative;
+  margin-left: 0px;
+  height: 90%;
+  z-index: 3;
+}
+
+.button {
+  display: none;
+  background-color: rgb(82, 146, 103);
+  border: 2px darkblue wheat;
+  border-radius: 10px;
+  color: aliceblue;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(13, 146, 91);
+}
+
+
+
+/*  LOGOS */
+.car-logo {
+  width: 10%;
+  height: 20%;
+  margin: 0.5%;
+  padding: 0.5%;
+}
+
+#car-logo2 {
+  transform: scaleX(-1);
+}
+
+.line {
+  position: absolute;
+  width: 40px;
+  height: inherit;
+  z-index: 1;
+}
+
+/*  INICIO Y FINAL METAS */
+
+#start {
+  margin-left: 150px;
+}
+
+#finish {
+  z-index: 1;
+  margin-left: 90%;
+  margin-right: 150px;
+}
+
+#racing-form {
+  background-color: rgb(109, 124, 120);
+  border: 5px solid #162c21;
+  text-align: center;
+  padding: 2% 2% 2% 2%;
+}
+
+#list-car-amount {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#navigation-bar {
+  text-align: center;
+  background-image: url(../img/grandstand.webp);
+  background-size: 100vw;
+  border: 5px solid #162c21;
+  margin: 1% 0.2% 2% 0.2%;
+  padding: 0.5%;
+  opacity: 90%;
+}
+
+#classification-title #close {
+  text-align: center;
+}
+
+.car-panel-item {
+  height: 50px;
+  width: 100px;
+}
+
+/*Tabla de resultados de la carrera*/
+table {
+  width: 100%;
+  text-align: center;
+}
+
+td {
+ width: 40%;
+ height: 20%;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+  color: black;
+}
+
+/*Panel modal y botón para cerrarlo*/
+#modal-result-panel {
+  display: none;
+  position: fixed;
+  width: 40%;
+  height: 80%;
+  margin: 0.5%;
+  padding: 0.5%;
+  background-color: rgb(109, 124, 120);
+  border: 5px solid #162c21;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra la ventana modal */
+  text-align: center;
+}
+
+#close-container {
+  text-align: center;
+  margin: 0;
+  position: relative;
+  top: 10%;
+  left: 40%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#close {
+  display: block;
+}
+
+

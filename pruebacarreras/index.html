@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PacDesarrollo</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!--Aquí se encuentra la tarjeta inicial, con la que se interactuará para realizar las carreras y ver el resultado -->
+    <div class="container">
+      <h1>Carrera Espacial</h1>
+      <label for="numeroCoches"
+        >Selecciona la cantidad de coches que van a participar</label
+      >
+      <select id="numeroCoches">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+      <button class="btn" id="Iniciar">Iniciar</button>
+      <button class="btn" id="Reiniciar">Reiniciar</button>
+    </div>
+
+    <!--Aquí se pinta la pista y los coches-->
+    <ul id="pintaCoches"></ul>
+
+    <!--Aquí se pinta el resultado de la carrera-->
+    <h2>Resultado</h2>
+    <div id="resultado"></div>
+  </body>
+</html>

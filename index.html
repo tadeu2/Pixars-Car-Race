@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es"> <!--Lenguaje de la página-->
+
+<!--Cabecera de la página-->
+
+<head>
+  <!--Título de la página-->
+  <title>Pixar Cars Race</title>
+  <!--Icono de la página-->
+  <link rel="icon" type="image/png" href="/img/favicon.png" />
+
+  <!--Carga las hojas de estilos asociada para el diseño-->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+
+  <!--Sección de metadatos-->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="author" content="Carlos Caruncho">
+
+  <!--Archivos de Código JavaScript incluidos-->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<!--Cuerpo de la página-->
+
+<body>
+  <!--Barra de navegación y logo-->
+  <div id="navigation-bar">
+    <img id="car-logo1" src="../img/rayomacqueen.webp" alt="Rayo MacQueen" class="car-logo">
+    <img id="main-logo" src="../img/logo.webp" alt="Cars Logo" class="car-logo">
+    <img id="car-logo2" src="../img/ramone.webp" alt="Ramone" class="car-logo">
+  </div>
+
+  <!--Formulario de selección de cantidad de coches que generamos-->
+  <form action="" method="post" id="racing-form">
+    <label>Selecciona el número de coches que participan</label>
+    <select id="list-car-amount" name="list-car-amount" title="Cantidad de coches">
+      <option></option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+    </select>
+    <div id="button-bar">
+      <button type="button" value="Iniciar" id="start-race" class="button">Iniciar</button>
+      <button type="button" value="Reiniciar" id="reset-race" class="button">Reiniciar</button>
+    </div>
+  </form>
+
+  <!--Contenedor de carreteras-->
+  <div id="road-container"></div>
+  <div id="modal-result-panel">
+    <h2 id="classification-title">Clasificación</h2>
+    <!--Tabla de resultados con-->
+    <table id="classification-board">
+      <tr>
+        <th>Posición</th>
+        <th>Participante</th>
+      </tr>
+
+    </table>
+    <div id="close-container"><button type="button" value="Cerrar" id="close" class="button">Cerrar</button></div>
+  </div>
+
+  <div id="modal-traffic-light" class="modal"></div>
+
+</body>
+
+</html>
