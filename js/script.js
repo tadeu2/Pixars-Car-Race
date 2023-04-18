@@ -21,6 +21,11 @@ $(document).ready(() => {
     btStartRace.fadeIn();
     roadContainer.empty(); //Vacia el contenedor de carreteras si estuviese pintado.
 
+    /* Vacia el array por si estuviese lleno al cambiar el valor7
+      * crea una variable donde almacenar el valor del desplegable
+      * convirtiendolo explicitamente en entero
+    */
+    cars = [] 
     carAmount = parseInt(carAmountSelector.val());
     /* Un bucle recorre la cantidad indicada y pinta las imagenes
      * de carreteras y los coches.
@@ -81,13 +86,13 @@ $(document).ready(() => {
       const carElement = $("#" + car.id);
       carElement.animate(
         {
-          "margin-left": screenWidth - carElement.width() -25, //Aumenta la distancia del margen izquierdo del coche con el tiempo
+          "margin-left": screenWidth - carElement.width() - 25, //Aumenta la distancia del margen izquierdo del coche con el tiempo
         },
         {
           duration: car.speed * 500, //Tiempo en ms
           /*Al completarse llama a una función callback, que suma +1 a los coches
            * finalizados, si la variable coches finalizados es igual a la cantidad
-          * de coches seleccionados, se muestra el botón de reset y el botón reiniciar
+           * de coches seleccionados, se muestra el botón de reset y el botón reiniciar
            */
           complete: () => {
             finishedCar += 1;
@@ -110,22 +115,29 @@ $(document).ready(() => {
   });
 
   function showResult() {
-    /*Reordena el array de clasificación de forma descendente,
-     * devuelve valor negativo si b es menor que a Actualizar la posición de cada coche en el array
+    /* Reordena el array de clasificación de forma descendente,
+     * si la velocidad de b es menor que la de a lo deja como está
+     * si b es mayor lo coloca delante de a.
      */
     cars.sort((a, b) => a.speed - b.speed);
 
-    cars.forEach((element, index) => {
+    /*Recorre el array cars y pasa como parámetros a la función lambda
+     * el elemento coche actual y el índice. Por cada elemento car
+     * se crea una fila, y por cada fila un elemento img de la 
+     * clase car-panel-item con los atributos src e id de carItem
+     */
+    cars.forEach((carItem, index) => {
       const row = $("<tr>");
       const position = $("<td>").text(index + 1);
       const carImage = $("<img>").addClass("car-panel-item");
       carImage.attr({
-        src: element.img,
-        id: element.id,
+        src: carItem.img,
+        id: carItem.id,
       });
 
+      //Se agrega a la fila el elemento y la imagen
       row.append(position, carImage);
-
+      //Se agrega la fila al tablón de la clasificación
       classificationBoard.append(row);
     });
 
@@ -150,10 +162,7 @@ $(document).ready(() => {
         }
       );
     });
-
-    // Borra el contenido de modal resultpanel
-    classificationBoard.empty();
-    modalResultPanel.fadeOut();
+   
     // Oculta y muestra los botones correspondientes
     btStartRace.show();
     btResetRace.hide();
@@ -163,6 +172,8 @@ $(document).ready(() => {
   // Ocultar ventana modal al hacer clic en el botón de cerrar
   btCloseModal.click(() => {
     modalResultPanel.fadeOut();
+    // Borra el contenido de modal resultpanel
+    classificationBoard.empty();
     btResetRace.show();
   });
 });
