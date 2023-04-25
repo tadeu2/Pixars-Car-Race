@@ -22,10 +22,10 @@ $(document).ready(() => {
     roadContainer.empty(); //Vacia el contenedor de carreteras si estuviese pintado.
 
     /* Vacia el array por si estuviese lleno al cambiar el valor7
-      * crea una variable donde almacenar el valor del desplegable
-      * convirtiendolo explicitamente en entero
-    */
-    cars = [] 
+     * crea una variable donde almacenar el valor del desplegable
+     * convirtiendolo explicitamente en entero
+     */
+    cars = [];
     carAmount = parseInt(carAmountSelector.val());
     /* Un bucle recorre la cantidad indicada y pinta las imagenes
      * de carreteras y los coches.
@@ -123,7 +123,7 @@ $(document).ready(() => {
 
     /*Recorre el array cars y pasa como parámetros a la función lambda
      * el elemento coche actual y el índice. Por cada elemento car
-     * se crea una fila, y por cada fila un elemento img de la 
+     * se crea una fila, y por cada fila un elemento img de la
      * clase car-panel-item con los atributos src e id de carItem
      */
     cars.forEach((carItem, index) => {
@@ -140,7 +140,7 @@ $(document).ready(() => {
       //Se agrega la fila al tablón de la clasificación
       classificationBoard.append(row);
     });
-
+    
     // Muestra el panel modal en la pantall
     modalResultPanel.fadeIn();
   }
@@ -162,18 +162,17 @@ $(document).ready(() => {
         }
       );
     });
-   
+
     // Oculta y muestra los botones correspondientes
     btStartRace.show();
     btResetRace.hide();
-    //$("#btGenerateRoads").show();
   });
 
   // Ocultar ventana modal al hacer clic en el botón de cerrar
   btCloseModal.click(() => {
     modalResultPanel.fadeOut();
-    // Borra el contenido de modal resultpanel
+    // Borra el contenido dela tabla de clasificaciones
     classificationBoard.empty();
-    btResetRace.show();
+    btResetRace.show(); //Muestra el botón de reiniciar.
   });
 });

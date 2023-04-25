@@ -1,20 +1,29 @@
-/*FUENTE PREDETERMINADA*/
+/*Fuente predeterminada para todos los elementos de la página
+* sacada de google desde el código JS
+*/
 
 * {
   font-family: "Audiowide", sans-serif;
 }
 
-/*CUERPO DE LA PÁGINA*/
+/*CUERPO DE LA PÁGINA
+ * Tamaño de la fuente 20px, color de fondo verde claro, tamaño
+ * 100% de la ventana del navegador, fuente de color blanco y margen
+ * del contenido 0.5
+*/
 body {
   font-size: 20px;
+  color: white;
   background-color: #b9cec4;
   /*background-image: url(../img/grasswallapaper.jpeg);*/
-  background-size: 100vw;
-  color: white;
+  background-size: 100vw; 
   padding: 0.5%;
 }
 
-/*TÍTULO PRINCIPAL DE LA PÁGINA*/
+/*TÍTULO PRINCIPAL DE LA PÁGINA
+ *Alineación centrada del texto, con sombra en el texto de 10 píxeles
+ *bordes redondeados de tamaño 2 y punteados de color blanco.
+*/
 h1 {
   text-align: center;
   text-shadow: 10px;
@@ -22,7 +31,10 @@ h1 {
   border: 2px dotted white;
 }
 
-/*CARRETERA*/
+/* CLASE CARRETERAs
+* imagen de carretera de fondo, tamaño del fondo 200px
+* Ancho de 98 por ciento de la ventana y alto 100 píxeles
+*/
 .road {
   background-image: url(../img/road.png);
   background-size: 200px;
@@ -30,13 +42,25 @@ h1 {
   width: 98vw;
 }
 
-/*COCHES*/
+/*CLASE COCHE
+* posición relativa a su posición normal, pudiendo ser desplazada
+* margen izquierdo 0 píxeles, alto 90% del ancho del padre
+* posición en el eje cartesiano Z de 3
+*/
 .car {
   position: relative;
   margin-left: 0px;
   height: 90%;
   z-index: 3;
 }
+
+/* CLASE BOTÓN
+* no aparece ni ocupa sitio en la pantalla, color verde de fondo
+* borde de 2 píxeles de color azul y grisaceo cada mitad
+* radio del borde de 10 píxeles, color de texto blanco azulado
+* de tamaño 18 píxeles, sin decoración, borde interior 10 píxeles horizontales
+* y 20 verticales, cursor al pasar el ratón en forma de mano
+*/
 
 .button {
   display: none;
@@ -50,6 +74,9 @@ h1 {
   cursor: pointer;
 }
 
+/*Al pasar el ratón por encima del botón cambiar el color de 
+ *fondo a blanco y el del texto a verde
+*/
 .button:hover {
   background-color: rgb(255, 255, 255);
   color: rgb(13, 146, 91);
@@ -57,7 +84,11 @@ h1 {
 
 
 
-/*  LOGOS */
+/*  CLASE LOGO
+ *  Ancho de los logos del 10% y alto del 20%, margenes 
+ * exterior e interior del 0,5%
+ * 
+*/
 .car-logo {
   width: 10%;
   height: 20%;
@@ -65,9 +96,17 @@ h1 {
   padding: 0.5%;
 }
 
+/* Elemento logo volteado horizontalmente en 180º para verlo al revés*/
+
 #car-logo2 {
   transform: scaleX(-1);
 }
+
+/* CLASE LÍNEA de meta y final
+ * posición absoluta ignorando su posición normal, se desplaza
+ * con respecto a su elemento padre. El alto lo hereda del padre.
+ * su posición Z es 1.
+*/
 
 .line {
   position: absolute;
@@ -76,17 +115,27 @@ h1 {
   z-index: 1;
 }
 
-/*  INICIO Y FINAL METAS */
+/*INICIO
+* margen izquierdo 150px
+*/
 
 #start {
   margin-left: 150px;
 }
 
+/*FINAL
+ * margen izquierdo 90% del ancho de la pantalla, derecho 150 píxeles
+*/
+
 #finish {
-  z-index: 1;
   margin-left: 90%;
   margin-right: 150px;
 }
+
+/*FORMULARIO DE SELECCIÓN DE NÚMERO DE COCHES
+ * Color de fondo gris, borde de 5 píxeles, línea continua y verde
+ *Alineación del texto centrada, y borde interior del 2%
+*/
 
 #racing-form {
   background-color: rgb(109, 124, 120);
@@ -95,12 +144,24 @@ h1 {
   padding: 2% 2% 2% 2%;
 }
 
+/*
+ * El control de la lista de cantidad de coches tiene una 
+ * fuente de 20 píxeles y un margen superior e inferior de 20 también
+*/
+
 #list-car-amount {
   font-size: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
+/*
+* La barra superior de navegación tiene el texto centrado,
+* una imagen de fondo de un estadio con público, el ancho del 
+* fondo del 100% de la ventana, y un borde de 5 píxeles, sólido
+* color verde oscuro, y un margen de 1 0.2 2 y 0.2 en porcentajes,
+* margen interior de 0.5%. Tiene la opacidad del 90%
+*/
 #navigation-bar {
   text-align: center;
   background-image: url(../img/grandstand.webp);
@@ -111,10 +172,18 @@ h1 {
   opacity: 90%;
 }
 
-#classification-title #close {
+/*
+ * El botón cerrar tiene el texto centrado y vista de bloque
+*/
+ #close {
   text-align: center;
+  display: block;
 }
 
+/*
+ * Cada coche del panel modal de clasificación mide
+ * un
+*/
 .car-panel-item {
   height: 50px;
   width: 100px;
@@ -153,6 +222,22 @@ tr:nth-child(even) {
   text-align: center;
 }
 
+/* aquí se establece el efecto de desenfoque 
+ * se desactivan los eventos del ratón para que no se 
+ *puedan hacer clic en los elementos de la página
+*/
+body.modal-open {
+  filter: blur(5px); /* aquí se establece el efecto de desenfoque */
+  pointer-events: none; /* se desactivan los eventos del ratón para que no se puedan hacer clic en los elementos de la página */
+}
+
+/* División donde está el botón cerrar
+* El texto se alinea al centro con un margen 0 posición relativa con un 10% de distancia con la
+* parte superior, y un 40% con la parte izquierda.
+* En conjunto, -ms-transform: translateY(-50%); transform: translateY(-50%); movería el elemento verticalmente en un 50% de su 
+* propia altura, y funcionaría en Internet Explorer 9 y versiones posteriores, así como en otros navegadores modernos.
+*/
+
 #close-container {
   text-align: center;
   margin: 0;
@@ -161,10 +246,6 @@ tr:nth-child(even) {
   left: 40%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
-
-#close {
-  display: block;
 }
 
 
