@@ -1,5 +1,4 @@
 # Pixars Car Race
-# Car Racing Game
 ![Captura de pantalla 2023-06-13 185435](https://github.com/tadeu2/Pixars-Car-Race/assets/18546346/ae7b58af-8be6-43d5-b9c8-97905cd6ae87)
 
 This is a project developed as part of the final project for the Advanced Degree in Multiplatform Application Development. The Car Racing Game is a web application built using HTML, CSS, and JavaScript.
