@@ -27,10 +27,13 @@ Copy code
 
 ## Usage
 
+
 1. Open the game in your web browser.
 2. Select the number of cars from the dropdown menu.
 3. Click the "Start" button to begin the race.
 4. Watch as the cars compete against each other to reach the finish line.
+
+![Captura de pantalla 2023-06-13 191529](https://github.com/tadeu2/Pixars-Car-Race/assets/18546346/5ecdfd63-c59f-42d8-b2e0-ae850b95600e)
 
 ## Contributing
 
